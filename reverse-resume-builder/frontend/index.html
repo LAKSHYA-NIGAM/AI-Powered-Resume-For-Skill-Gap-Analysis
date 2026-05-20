@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-Powered Reverse Resume Builder - Analyze your resume against job descriptions, identify skill gaps, and get personalized recommendations to improve.">
+    <title>SkillSync AI — Resume Skill Gap Analyzer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ============================================ -->
+    <!-- HEADER -->
+    <!-- ============================================ -->
+    <header class="header" id="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"/>
+                        <path d="M8 16L14 22L24 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                                <stop stop-color="#6C63FF"/>
+                                <stop offset="1" stop-color="#4ECDC4"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h1>SkillSync <span class="accent">AI</span></h1>
+            </div>
+            <p class="tagline">AI-Powered Reverse Resume Builder &amp; Skill Gap Analyzer</p>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT -->
+    <!-- ============================================ -->
+    <main class="main-content">
+        <!-- Input Section -->
+        <section class="input-section" id="input-section">
+            <div class="section-header">
+                <h2>📄 Upload & Analyze</h2>
+                <p>Paste your resume and the target job description to get a complete skill gap analysis</p>
+            </div>
+
+            <form id="analyze-form" class="input-grid">
+                <!-- Resume Input -->
+                <div class="input-card" id="resume-card">
+                    <div class="card-header">
+                        <span class="card-icon">📝</span>
+                        <h3>Your Resume</h3>
+                    </div>
+                    
+                    <!-- PDF Upload Area -->
+                    <div class="upload-area" id="upload-area">
+                        <input type="file" id="resume-file" accept=".pdf" hidden>
+                        <div class="upload-content">
+                            <svg class="upload-icon" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M24 4L24 32M24 4L16 12M24 4L32 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 28V40C8 41.1 8.9 42 10 42H38C39.1 42 40 41.1 40 40V28" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <p>Click to upload PDF resume</p>
+                            <span class="upload-hint">or drag and drop</span>
+                        </div>
+                        <div class="file-selected" id="file-selected" style="display:none;">
+                            <span class="file-icon">📎</span>
+                            <span id="file-name"></span>
+                            <button type="button" class="remove-file" id="remove-file">✕</button>
+                        </div>
+                    </div>
+
+                    <div class="divider-text"><span>OR paste text</span></div>
+
+                    <textarea id="resume-text" placeholder="Paste your resume text here...&#10;&#10;Example:&#10;John Doe - Software Developer&#10;Skills: Python, JavaScript, React, SQL&#10;Experience: 2 years at XYZ Corp&#10;Projects: E-commerce platform, ML model..." rows="8"></textarea>
+                </div>
+
+                <!-- Job Description Input -->
+                <div class="input-card" id="jd-card">
+                    <div class="card-header">
+                        <span class="card-icon">💼</span>
+                        <h3>Job Description</h3>
+                    </div>
+                    <textarea id="jd-text" placeholder="Paste the job description here...&#10;&#10;Example:&#10;We are looking for a Full Stack Developer with experience in:&#10;- Python, Django, or Flask&#10;- React or Angular&#10;- PostgreSQL or MongoDB&#10;- Docker, AWS&#10;- Git, CI/CD..." rows="14" required></textarea>
+                </div>
+
+                <!-- Analyze Button -->
+                <div class="action-area">
+                    <button type="submit" class="analyze-btn" id="analyze-btn">
+                        <span class="btn-text">🔍 Analyze Skill Gap</span>
+                        <span class="btn-loading" style="display:none;">
+                            <span class="spinner"></span> Analyzing...
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Error Message -->
+        <div id="error-message" class="error-toast" style="display:none;"></div>
+
+        <!-- Results Section (hidden until analysis) -->
+        <section class="results-section" id="results-section" style="display:none;">
+            
+            <!-- Score Overview Cards -->
+            <div class="score-overview" id="score-overview">
+                <div class="score-card primary" id="match-score-card">
+                    <div class="score-ring">
+                        <svg viewBox="0 0 120 120">
+                            <circle class="ring-bg" cx="60" cy="60" r="52"/>
+                            <circle class="ring-fill" id="match-ring" cx="60" cy="60" r="52" stroke-dasharray="327" stroke-dashoffset="327"/>
+                        </svg>
+                        <span class="score-value" id="match-percentage">0%</span>
+                    </div>
+                    <h3>Skill Match</h3>
+                    <p class="score-subtitle" id="match-subtitle">-</p>
+                </div>
+
+                <div class="score-card" id="similarity-score-card">
+                    <div class="score-ring">
+                        <svg viewBox="0 0 120 120">
+                            <circle class="ring-bg" cx="60" cy="60" r="52"/>
+                            <circle class="ring-fill similarity" id="similarity-ring" cx="60" cy="60" r="52" stroke-dasharray="327" stroke-dashoffset="327"/>
+                        </svg>
+                        <span class="score-value" id="similarity-score">0%</span>
+                    </div>
+                    <h3>ML Similarity</h3>
+                    <p class="score-subtitle">TF-IDF Cosine</p>
+                </div>
+
+                <div class="score-card" id="ats-score-card">
+                    <div class="score-ring">
+                        <svg viewBox="0 0 120 120">
+                            <circle class="ring-bg" cx="60" cy="60" r="52"/>
+                            <circle class="ring-fill ats" id="ats-ring" cx="60" cy="60" r="52" stroke-dasharray="327" stroke-dashoffset="327"/>
+                        </svg>
+                        <span class="score-value" id="ats-score-value">0</span>
+                    </div>
+                    <h3>ATS Score</h3>
+                    <p class="score-subtitle" id="ats-rating">-</p>
+                </div>
+
+                <div class="score-card stats-card">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" id="stat-matched">0</span>
+                            <span class="stat-label">Matched</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number missing" id="stat-missing">0</span>
+                            <span class="stat-label">Missing</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number extra" id="stat-extra">0</span>
+                            <span class="stat-label">Extra</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number total" id="stat-total">0</span>
+                            <span class="stat-label">JD Skills</span>
+                        </div>
+                    </div>
+                    <h3>Skills Overview</h3>
+                </div>
+            </div>
+
+            <!-- ATS Score Breakdown -->
+            <div class="result-card" id="ats-breakdown-card">
+                <div class="card-header">
+                    <span class="card-icon">📊</span>
+                    <h3>ATS Score Breakdown</h3>
+                </div>
+                <div class="ats-bars" id="ats-bars"></div>
+            </div>
+
+            <!-- Skill Analysis -->
+            <div class="skills-grid">
+                <!-- Matching Skills -->
+                <div class="result-card matching-card" id="matching-card">
+                    <div class="card-header">
+                        <span class="card-icon">✅</span>
+                        <h3>Matching Skills</h3>
+                    </div>
+                    <div class="skills-list" id="matching-skills"></div>
+                </div>
+
+                <!-- Missing Skills -->
+                <div class="result-card missing-card" id="missing-card">
+                    <div class="card-header">
+                        <span class="card-icon">❌</span>
+                        <h3>Missing Skills</h3>
+                    </div>
+                    <div class="skills-list" id="missing-skills"></div>
+                </div>
+            </div>
+
+            <!-- Skill Priority Ranking -->
+            <div class="result-card" id="priority-card">
+                <div class="card-header">
+                    <span class="card-icon">🎯</span>
+                    <h3>Skill Importance Ranking</h3>
+                </div>
+                <div class="priority-grid" id="priority-grid"></div>
+            </div>
+
+            <!-- Learning Path -->
+            <div class="result-card" id="learning-card">
+                <div class="card-header">
+                    <span class="card-icon">📚</span>
+                    <h3>Learning Path</h3>
+                </div>
+                <div class="learning-list" id="learning-list"></div>
+            </div>
+
+            <!-- Project Suggestions -->
+            <div class="result-card" id="projects-card">
+                <div class="card-header">
+                    <span class="card-icon">🚀</span>
+                    <h3>Recommended Projects</h3>
+                </div>
+                <div class="projects-list" id="projects-list"></div>
+            </div>
+
+            <!-- Resume Tips -->
+            <div class="result-card" id="tips-card">
+                <div class="card-header">
+                    <span class="card-icon">💡</span>
+                    <h3>Resume Improvement Tips</h3>
+                </div>
+                <div class="tips-list" id="tips-list"></div>
+            </div>
+
+            <!-- Back to Top -->
+            <div class="action-area">
+                <button class="analyze-btn secondary" id="new-analysis-btn">
+                    🔄 New Analysis
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built with ❤️ using Python, Flask, NLTK & scikit-learn | AI-Powered Skill Gap Analysis</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

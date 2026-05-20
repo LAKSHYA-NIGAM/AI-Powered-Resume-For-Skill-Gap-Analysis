@@ -1,0 +1,135 @@
+skill,category
+python,Programming
+java,Programming
+javascript,Programming
+c++,Programming
+c,Programming
+c#,Programming
+typescript,Programming
+go,Programming
+rust,Programming
+ruby,Programming
+php,Programming
+swift,Programming
+kotlin,Programming
+r,Programming
+scala,Programming
+html,Web Development
+css,Web Development
+react,Web Development
+angular,Web Development
+vue,Web Development
+node.js,Web Development
+express,Web Development
+django,Web Development
+flask,Web Development
+spring boot,Web Development
+next.js,Web Development
+bootstrap,Web Development
+tailwind css,Web Development
+jquery,Web Development
+rest api,Web Development
+graphql,Web Development
+wordpress,Web Development
+sql,Database
+mysql,Database
+postgresql,Database
+mongodb,Database
+sqlite,Database
+redis,Database
+oracle,Database
+cassandra,Database
+dynamodb,Database
+firebase,Database
+aws,Cloud & DevOps
+azure,Cloud & DevOps
+gcp,Cloud & DevOps
+docker,Cloud & DevOps
+kubernetes,Cloud & DevOps
+jenkins,Cloud & DevOps
+terraform,Cloud & DevOps
+ansible,Cloud & DevOps
+ci/cd,Cloud & DevOps
+linux,Cloud & DevOps
+git,Cloud & DevOps
+github,Cloud & DevOps
+nginx,Cloud & DevOps
+apache,Cloud & DevOps
+machine learning,AI & ML
+deep learning,AI & ML
+natural language processing,AI & ML
+nlp,AI & ML
+computer vision,AI & ML
+tensorflow,AI & ML
+pytorch,AI & ML
+keras,AI & ML
+scikit-learn,AI & ML
+pandas,AI & ML
+numpy,AI & ML
+matplotlib,AI & ML
+opencv,AI & ML
+data analysis,AI & ML
+data science,AI & ML
+neural networks,AI & ML
+reinforcement learning,AI & ML
+generative ai,AI & ML
+large language models,AI & ML
+prompt engineering,AI & ML
+data structures,Core CS
+algorithms,Core CS
+object oriented programming,Core CS
+oop,Core CS
+operating systems,Core CS
+computer networks,Core CS
+database management,Core CS
+software engineering,Core CS
+system design,Core CS
+design patterns,Core CS
+agile,Methodology
+scrum,Methodology
+jira,Methodology
+project management,Methodology
+problem solving,Soft Skills
+communication,Soft Skills
+teamwork,Soft Skills
+leadership,Soft Skills
+time management,Soft Skills
+critical thinking,Soft Skills
+analytical skills,Soft Skills
+presentation,Soft Skills
+cybersecurity,Security
+ethical hacking,Security
+penetration testing,Security
+network security,Security
+encryption,Security
+selenium,Testing
+junit,Testing
+pytest,Testing
+unit testing,Testing
+integration testing,Testing
+manual testing,Testing
+automation testing,Testing
+power bi,Data & Analytics
+tableau,Data & Analytics
+excel,Data & Analytics
+data visualization,Data & Analytics
+big data,Data & Analytics
+hadoop,Data & Analytics
+spark,Data & Analytics
+etl,Data & Analytics
+android,Mobile Development
+ios,Mobile Development
+react native,Mobile Development
+flutter,Mobile Development
+swift,Mobile Development
+kotlin,Mobile Development
+figma,Design
+adobe xd,Design
+ui/ux,Design
+wireframing,Design
+prototyping,Design
+blockchain,Emerging Tech
+iot,Emerging Tech
+ar/vr,Emerging Tech
+quantum computing,Emerging Tech
+edge computing,Emerging Tech

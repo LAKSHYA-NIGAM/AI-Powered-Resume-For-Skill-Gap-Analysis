@@ -1,0 +1,149 @@
+role,skill,priority
+Software Developer,python,High
+Software Developer,java,High
+Software Developer,data structures,High
+Software Developer,algorithms,High
+Software Developer,git,High
+Software Developer,sql,Medium
+Software Developer,rest api,Medium
+Software Developer,object oriented programming,Medium
+Software Developer,problem solving,Medium
+Software Developer,linux,Low
+Software Developer,docker,Low
+Software Developer,agile,Low
+Frontend Developer,html,High
+Frontend Developer,css,High
+Frontend Developer,javascript,High
+Frontend Developer,react,High
+Frontend Developer,git,High
+Frontend Developer,typescript,Medium
+Frontend Developer,rest api,Medium
+Frontend Developer,bootstrap,Medium
+Frontend Developer,tailwind css,Medium
+Frontend Developer,figma,Low
+Frontend Developer,ui/ux,Low
+Frontend Developer,node.js,Low
+Backend Developer,python,High
+Backend Developer,java,High
+Backend Developer,sql,High
+Backend Developer,rest api,High
+Backend Developer,git,High
+Backend Developer,node.js,Medium
+Backend Developer,docker,Medium
+Backend Developer,postgresql,Medium
+Backend Developer,mongodb,Medium
+Backend Developer,linux,Medium
+Backend Developer,redis,Low
+Backend Developer,kubernetes,Low
+Backend Developer,system design,Low
+Full Stack Developer,html,High
+Full Stack Developer,css,High
+Full Stack Developer,javascript,High
+Full Stack Developer,python,High
+Full Stack Developer,react,High
+Full Stack Developer,sql,High
+Full Stack Developer,git,High
+Full Stack Developer,rest api,Medium
+Full Stack Developer,node.js,Medium
+Full Stack Developer,mongodb,Medium
+Full Stack Developer,docker,Medium
+Full Stack Developer,typescript,Low
+Full Stack Developer,aws,Low
+Full Stack Developer,agile,Low
+Data Scientist,python,High
+Data Scientist,machine learning,High
+Data Scientist,pandas,High
+Data Scientist,numpy,High
+Data Scientist,data analysis,High
+Data Scientist,sql,High
+Data Scientist,scikit-learn,Medium
+Data Scientist,tensorflow,Medium
+Data Scientist,data visualization,Medium
+Data Scientist,statistics,Medium
+Data Scientist,deep learning,Low
+Data Scientist,r,Low
+Data Scientist,big data,Low
+Data Analyst,python,High
+Data Analyst,sql,High
+Data Analyst,excel,High
+Data Analyst,data visualization,High
+Data Analyst,pandas,High
+Data Analyst,power bi,Medium
+Data Analyst,tableau,Medium
+Data Analyst,data analysis,Medium
+Data Analyst,statistics,Medium
+Data Analyst,r,Low
+Data Analyst,communication,Low
+Data Analyst,problem solving,Low
+ML Engineer,python,High
+ML Engineer,machine learning,High
+ML Engineer,deep learning,High
+ML Engineer,tensorflow,High
+ML Engineer,pytorch,High
+ML Engineer,scikit-learn,High
+ML Engineer,pandas,Medium
+ML Engineer,numpy,Medium
+ML Engineer,docker,Medium
+ML Engineer,sql,Medium
+ML Engineer,aws,Low
+ML Engineer,kubernetes,Low
+ML Engineer,mlops,Low
+DevOps Engineer,linux,High
+DevOps Engineer,docker,High
+DevOps Engineer,kubernetes,High
+DevOps Engineer,aws,High
+DevOps Engineer,ci/cd,High
+DevOps Engineer,git,High
+DevOps Engineer,terraform,Medium
+DevOps Engineer,ansible,Medium
+DevOps Engineer,jenkins,Medium
+DevOps Engineer,python,Medium
+DevOps Engineer,nginx,Low
+DevOps Engineer,monitoring,Low
+DevOps Engineer,networking,Low
+Cloud Engineer,aws,High
+Cloud Engineer,azure,High
+Cloud Engineer,docker,High
+Cloud Engineer,kubernetes,High
+Cloud Engineer,linux,High
+Cloud Engineer,terraform,Medium
+Cloud Engineer,ci/cd,Medium
+Cloud Engineer,python,Medium
+Cloud Engineer,networking,Medium
+Cloud Engineer,gcp,Low
+Cloud Engineer,ansible,Low
+Cloud Engineer,security,Low
+Mobile Developer,java,High
+Mobile Developer,kotlin,High
+Mobile Developer,swift,High
+Mobile Developer,react native,High
+Mobile Developer,flutter,Medium
+Mobile Developer,rest api,Medium
+Mobile Developer,git,Medium
+Mobile Developer,sql,Medium
+Mobile Developer,firebase,Low
+Mobile Developer,ui/ux,Low
+Mobile Developer,agile,Low
+Cybersecurity Analyst,cybersecurity,High
+Cybersecurity Analyst,network security,High
+Cybersecurity Analyst,linux,High
+Cybersecurity Analyst,python,High
+Cybersecurity Analyst,ethical hacking,Medium
+Cybersecurity Analyst,penetration testing,Medium
+Cybersecurity Analyst,encryption,Medium
+Cybersecurity Analyst,firewalls,Medium
+Cybersecurity Analyst,incident response,Low
+Cybersecurity Analyst,compliance,Low
+Cybersecurity Analyst,risk assessment,Low
+AI Engineer,python,High
+AI Engineer,machine learning,High
+AI Engineer,deep learning,High
+AI Engineer,natural language processing,High
+AI Engineer,tensorflow,High
+AI Engineer,pytorch,Medium
+AI Engineer,computer vision,Medium
+AI Engineer,generative ai,Medium
+AI Engineer,large language models,Medium
+AI Engineer,docker,Low
+AI Engineer,aws,Low
+AI Engineer,system design,Low
