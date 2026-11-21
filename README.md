@@ -58,6 +58,15 @@ SmartHireAI provides transparency by computing instant algorithmic ATS compatibi
 1. **Dual PDF & Text Ingestion:** Extracts text from multi-page PDF resumes or raw text inputs without layout loss.
 2. **Dynamic Skill Database:** Maps extracted terms against a structured dataset covering 300+ programming languages, frameworks, cloud tools, databases, and DevOps practices.
 3. **TF-IDF & Cosine Similarity Engine:** Measures semantic alignment between resume content and job descriptions using scikit-learn unigram/bigram vector spaces.
+4. **Career Path Trajectory & Role Transition Engine (`career_trajectory.py`)**:
+   - Calculates multi-hop role transition difficulty (Low, Moderate, Challenging, Steep) from candidate skills.
+   - Computes transition delta skills and realistic ramp-up estimates in weeks.
+   - Recommends next best alternative roles ranked by readiness percentage.
+
+5. **Structural ATS Compliance & Action Verb Validator (`ats_validator.py`)**:
+   - Scans resumes for essential ATS headers (Experience, Education, Skills, Projects, Contact).
+   - Validates density of senior action verbs (e.g., `architected`, `engineered`, `spearheaded`) and quantified business impact metrics.
+
 4. **4-Tier ATS Scoring Breakdown:**
    - **Keyword Match (40 pts):** Proportion of target job description requirements satisfied.
    - **Section Presence (30 pts):** Automated detection of Contact, Summary, Education, Experience, Skills, and Projects.
