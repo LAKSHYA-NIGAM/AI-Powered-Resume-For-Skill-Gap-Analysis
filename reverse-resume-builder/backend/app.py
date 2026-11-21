@@ -53,6 +53,23 @@ def serve_static(filename):
     return send_from_directory(FRONTEND_DIR, filename)
 
 
+
+@app.route('/health', methods=['GET'])
+def health():
+    """Health check endpoint returning service status and skill DB statistics."""
+    try:
+        roles = get_all_roles()
+        total_skills = len(SKILLS_DB) if SKILLS_DB else 0
+        return jsonify({
+            'status': 'healthy',
+            'service': 'SmartHireAI Resume Analyzer Backend',
+            'roles_count': len(roles),
+            'skills_database_size': total_skills
+        }), 200
+    except Exception as e:
+        return jsonify({'status': 'unhealthy', 'error': str(e)}), 500
+
+
 @app.route('/analyze', methods=['POST'])
 def analyze():
     """
